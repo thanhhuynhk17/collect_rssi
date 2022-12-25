@@ -28,7 +28,7 @@ export default function App() {
 				// Handle error (scanning will be stopped automatically)
 				return;
 			}
-			if (device.id ==="75:6A:E7:09:67:D8") {
+			if (device.name ==="ThanhDepTraiQua") {
 				console.log(JSON.stringify({
 					id: device.id,
 					rssi: device.rssi,
@@ -68,14 +68,14 @@ export default function App() {
 			observation: rssi_val
 		}
 		previousCorrected = kFilter.filter(filterParams);
-		setRssiFiltered(prev=>[...prev, Math.round(previousCorrected.mean[0])]);
+		setRssiFiltered(prev=>[...prev, Math.round(previousCorrected.mean[0][0])]);
 	},[rssi])
 
 	return (
 		<View className="flex-1 p-8 bg-slate-800 w-screen">
 			<View className="flex-1 mt-2">
-				<Text className="text-white">Raw:{`\t\t\t\t${rssi}`}</Text>
-				<Text className="text-white">Filtered:{`\t\t${rssiFiltered}`}</Text>
+				<Text className="text-white">{`Raw ${rssi.length}:\t\t\t\t${rssi}`}</Text>
+				<Text className="text-white">{`Filtered ${rssiFiltered.length}:\t\t${rssiFiltered}`}</Text>
 				{/* Chart */}
 			</View>
 			<View className="flex-row items-center justify-between 
