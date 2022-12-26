@@ -10,12 +10,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "chart.js": "^4.1.1",
     "kalman-filter": "^1.11.1",
     "nativewind": "^2.0.11",
     "react": "18.1.0",
     "react-native": "0.70.6",
-    "react-native-ble-plx": "^2.0.3"
+    "react-native-ble-plx": "^2.0.3",
+    "react-native-chart-kit": "^6.12.0",
+    "react-native-svg": "^13.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
